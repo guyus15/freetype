@@ -27,7 +27,7 @@
 #endif
 
 #ifndef local
-#  define local static
+#  define local extern
 #endif
 /* compile with -Dlocal if your debugger can't find static symbols */
 

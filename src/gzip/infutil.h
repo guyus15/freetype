@@ -90,7 +90,7 @@ local uInt inflate_mask[17];
 #endif
 
 /* copy as much as possible from the sliding window to the output area */
-local int inflate_flush OF((
+int inflate_flush OF((
     inflate_blocks_statef *,
     z_streamp ,
     int));

@@ -20,7 +20,7 @@ struct inflate_huft_s {
   union {
     struct {
       Byte Exop;        /* number of extra bits or operation */
-      Byte Bits;        /* number of bits in this code or subcode */
+      Byte Bits;        /* number of bits in this code or sub-code */
     } what;
     uInt pad;           /* pad structure to a power of 2 (4 bytes for */
   } word;               /*  16-bit, 8 bytes for 32-bit int's) */
@@ -42,7 +42,7 @@ local  int inflate_trees_bits OF((
     inflate_huft *,             /* space for trees */
     z_streamp));                /* for messages */
 
-local  int inflate_trees_dynamic OF((
+int inflate_trees_dynamic OF((
     uInt,                       /* number of literal/length codes */
     uInt,                       /* number of distance codes */
     uIntf *,                    /* that many (total) code lengths */

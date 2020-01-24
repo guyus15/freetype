@@ -324,7 +324,7 @@ z_streamp z             /* for messages */
 }
 
 
-local int inflate_trees_dynamic( /* nl, nd, c, bl, bd, tl, td, hp, z) */
+int inflate_trees_dynamic( /* nl, nd, c, bl, bd, tl, td, hp, z) */
 uInt nl,                /* number of literal/length codes */
 uInt nd,                /* number of distance codes */
 uIntf *c,               /* that many (total) code lengths */

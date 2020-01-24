@@ -85,7 +85,7 @@ uLongf *c )
 }
 
 
-local inflate_blocks_statef *inflate_blocks_new( /* z, c, w) */
+inflate_blocks_statef *inflate_blocks_new( /* z, c, w) */
 z_streamp z,
 check_func c,
 uInt w )
