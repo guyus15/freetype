@@ -1,3 +1,10 @@
 config.mk
 objs/vc2010/
 build
+
+bin/
+bin-int/
+
+.vcxproj
+.filters
+.user
