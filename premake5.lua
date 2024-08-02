@@ -1,33 +1,29 @@
 project "FreeType"
-	language    "C"
-	kind        "StaticLib"
-	warnings    "off"
-	
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-	
-	defines     
-	{
+    language "C"
+    kind "StaticLib"
+    warnings "off"
+    pic "On"
+
+    targetdir "../../libs/%{cfg.buildcfg}"
+    objdir "../../obj/%{cfg.buildcfg}"
+
+    defines
+    {
         "VC_EXTRALEAN",
-		"_CRT_SECURE_NO_WARNINGS",
+        "_CRT_SECURE_NO_WARNINGS",
         "FT2_BUILD_LIBRARY",
         "_CRT_NONSTDC_NO_DEPRECATE",
-        "_MBCS"  
-	}
+        "_MBCS"
+    }
 
-	sysincludedirs
-	{
-		"include"
-	}
+    includedirs
+    {
+        "include"
+    }
 
-	includedirs
-	{
-		"include"
-	}
-
-	files
-	{
-		"src/autofit/autofit.c",
+    files
+    {
+        "src/autofit/autofit.c",
         "src/bdf/bdf.c",
         "src/cff/cff.c",
         "src/base/ftbase.c",
@@ -63,11 +59,11 @@ project "FreeType"
         "src/type1/type1.c",
         "src/cid/type1cid.c",
         "src/type42/type42.c",
-        "src/winfonts/winfnt.c",      
-	}
+        "src/winfonts/winfnt.c"
+        }
 
-	filter "system:windows"
-		defines { "_WINDOWS" }
+        filter "system:windows"
+            defines { "_WINDOWS" }
 
-	filter "system:not windows"
-		defines { 'HAVE_UNISTD_H' }
+        filter "system:not windows"
+            defines { 'HAVE_UNISTD_H' }
