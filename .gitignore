@@ -5,6 +5,9 @@ build
 bin/
 bin-int/
 
-.vcxproj
-.filters
-.user
+*.vcxproj
+*.filters
+*.user
+
+Makefile
+*.make
